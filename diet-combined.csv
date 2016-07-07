@@ -1,0 +1,54 @@
+Species,LifeForm,Count,Mean,Rank,CumAve
+Poa sp ,graminoid,31,11.99354839,1,11.99354839
+Agropyron sp ,graminoid,31,8.732258065,2,20.72580645
+Carex sp ,graminoid,31,7.490322581,3,28.21612903
+Lupinus sp ,forb,31,6.04516129,4,34.26129032
+Verbascum sp ,forb,31,4.464516129,5,38.72580645
+Bromus tectorum,graminoid,31,3.587096774,6,42.31290323
+Festuca altaica campestris,graminoid,31,3.516129032,7,45.82903226
+Stipa comata,graminoid,31,3.267741935,8,49.09677419
+Poa pratensis,graminoid,31,2.683870968,9,51.78064516
+Medicago sativa,forb,31,2.551612903,10,54.33225806
+Balsamorhiza sagittata,forb,31,2.316129032,11,56.6483871
+Salix sp  stem,shrub,31,2.306451613,12,58.95483871
+Bromus inermis,graminoid,31,1.983870968,13,60.93870968
+Elymus glaucus,graminoid,31,1.938709677,14,62.87741935
+Centaurea sp ,forb,31,1.935483871,15,64.81290323
+Shepherdia sp  leaf,shrub,31,1.670967742,16,66.48387097
+Calamagrostis rubescens,graminoid,31,1.609677419,17,68.09354839
+Other Grass,graminoid,31,1.587096774,18,69.68064516
+Festuca idahoensis,graminoid,31,1.574193548,19,71.25483871
+Other Forb,forb,31,1.55483871,20,72.80967742
+Physocarpus sp  leaf,shrub,31,1.364516129,21,74.17419355
+Pseudoroegneria spicata,graminoid,31,1.229032258,22,75.40322581
+Trifolium sp ,forb,31,1.087096774,23,76.49032258
+Composite hair,comphair,31,1.070967742,24,77.56129032
+Pinus sp ,tree,31,1.061290323,25,78.62258065
+Phleum pratense,graminoid,31,1.041935484,26,79.66451613
+Achillea millefolium,forb,31,1.006451613,27,80.67096774
+Cirsium sp ,forb,31,0.948387097,28,81.61935484
+Vaccinium sp  stem,shrub,31,0.932258065,29,82.5516129
+Alopecurus sp ,graminoid,31,0.767741935,30,83.31935484
+Koeleria macrantha,graminoid,31,0.748387097,31,84.06774194
+Astragalus sp ,forb,31,0.722580645,32,84.79032258
+Taraxacum sp ,forb,31,0.703225806,33,85.49354839
+Symphoricarpos albus leaf,shrub,31,0.674193548,34,86.16774194
+Potentilla sp ,forb,21,0.635483871,35,86.80322581
+Other Shrub leaf,shrub,31,0.606451613,36,87.40967742
+Zea mays,graminoid,21,0.603225806,37,88.01290323
+Triticum aestivum,graminoid,21,0.580645161,38,88.59354839
+Galium sp ,forb,31,0.570967742,39,89.16451613
+Ranunculus sp ,forb,31,0.570967742,40,89.73548387
+Solidago sp ,forb,31,0.551612903,41,90.28709677
+Agropyron cristatum,graminoid,21,0.529032258,42,90.81612903
+Other Shrub stem,shrub,31,0.493548387,43,91.30967742
+Populus sp  stem,tree,21,0.467741935,44,91.77741935
+Dactylis glomerata,graminoid,21,0.461290323,45,92.23870968
+Equisetum sp ,forb,31,0.438709677,46,92.67741935
+Salix sp  leaf,shrub,31,0.419354839,47,93.09677419
+Berberis repens leaf,shrub,21,0.396774194,48,93.49354839
+Prunus sp  leaf,shrub,31,0.316129032,49,93.80967742
+Phlox sp ,forb,31,0.303225806,50,94.11290323
+Aristida purpurea,graminoid,21,0.280645161,51,94.39354839
+Xerophyllum tenax,forb,11,0.280645161,52,94.67419355
+Cornus sp  leaf,forb,21,0.277419355,53,94.9516129
