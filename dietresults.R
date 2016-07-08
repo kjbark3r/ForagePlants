@@ -122,29 +122,90 @@ comboplants <- as.character(unique(combo$Species))
   julaug[julaug$Species %in% "Castilleja sp ",] 
   septoct[septoct$Species %in% "Castilleja sp ",] 
 
-## SKIP RUNNING CODE BETWEEN THESE LINES
+## CAN SKIP RUNNING CODE BETWEEN THESE LINES
 #############################################################
   
   
 ## CREATE LIST OF FORAGE SPECIES
 
 forage <- as.data.frame(septoct[septoct$Species %in% "Penstemon sp ",]) %>%
-  bind_rows(combo) %>%  #add penstemmon 
+  bind_rows(combo) %>%  #add penstemmon to list of forage species
   filter(!grepl("Other|Composite", Species)) #remove non-species
 forage$Species <- gsub('leaf| stem', '', forage$Species)#remove plant parts
 forage$Species <- trimws(forage$Species) #remove leading/trailing spaces
 forage <- left_join(forage, spp, by = "Species")  #add spp code
+temp <- strsplit(forage$Species, " ") #add genus
+forage$Genus <- sapply(temp, "[", 1)
 
-#still missing some species codes due to inability to ID past genus
-#will add these manually for sake of time
 write.csv(forage, file = "foragespecies.csv", row.names = FALSE)
-
-
+ 
 ##########
 ## FIGURING OUT HOW TO HANDLE GENUS-ONLY IDS
 
 genusonly <- filter(forage, grepl(" sp", Species)) #all non-species
+temp <- strsplit(genusonly$Species, " ")
+genusonly$Genus <- sapply(temp, "[", 1) 
+ write.csv(genusonly, file = "genusonly.csv", row.names = FALSE)
+ 
   # 28 forage plants (~57%) are only IDd to genus
   # see how many of the ones IDd to species have many other species in that genus
 speciesonly <- filter(forage, !grepl(" sp", Species))
-     
+temp <- strsplit(speciesonly$Species, " ")
+speciesonly$Genus <- sapply(temp, "[", 1) 
+ write.csv(speciesonly, file = "speciesonly.csv", row.names = FALSE)
+
+# seeing how many spp in the genuses IDd to we actually recorded
+
+spp <- sqlQuery(channel, paste("select PlantCode, LifeForm, NameScientific
+                                 from NSERP_SP_list"))
+spp <- rename(spp, Species = PlantCode)
+
+classn <- sqlQuery(channel, paste("select * from Classification"))
+  colnames(classn) <- c("VisitDate", "PlotID", "PlotM", "Species", "Total", "Live", "Senesced")
+  classn$Species <- trimws(classn$Species) #remove leading/trailing whitespace
+classn <- classn %>%
+  mutate(Quadrat = paste(PlotID,"-",PlotM, sep="")) %>%
+	mutate(QuadratVisit = paste(PlotID,".",PlotM, ".", VisitDate, sep="")) %>%
+  mutate(PlotVisit = paste(PlotID, ".", VisitDate, sep="")) %>%
+  left_join(spp, by = "Species")
+classn$NameScientific <- as.character(classn$NameScientific)
+temp <- strsplit(classn$NameScientific, " ")
+classn$Genus <- sapply(temp, "[", 1)
+classn$SpeciesOnly <- sapply(temp, "[", 2)
+
+# pull each genus of interest and ghetto-ly look at n spp
+unique(classn[grepl("Agropyron", classn$Genus),14])
+unique(classn[grepl("Alopecurus", classn$Genus),14])
+unique(classn[grepl("Astragalus", classn$Genus),14])
+unique(classn[grepl("Carex", classn$Genus),14])
+unique(classn[grepl("Centaurea", classn$Genus),14])
+unique(classn[grepl("Cirsium", classn$Genus),14])
+unique(classn[grepl("Cornus", classn$Genus),14])
+unique(classn[grepl("Equisetum", classn$Genus),14])
+unique(classn[grepl("Galium", classn$Genus),14])
+unique(classn[grepl("Lupinus", classn$Genus),14])
+unique(classn[grepl("Penstemon", classn$Genus),14])
+unique(classn[grepl("Phlox", classn$Genus),14])
+unique(classn[grepl("Physocarpus", classn$Genus),14])
+unique(classn[grepl("Pinus", classn$Genus),14])
+unique(classn[grepl("Poa", classn$Genus),14])
+unique(classn[grepl("Populus", classn$Genus),14])
+unique(classn[grepl("Potentilla", classn$Genus),14])
+unique(classn[grepl("Prunus", classn$Genus),14])
+unique(classn[grepl("Pseudoroegneria", classn$Genus),14])
+unique(classn[grepl("Ranunculus", classn$Genus),14])
+unique(classn[grepl("Salix", classn$Genus),14])
+unique(classn[grepl("Shepherdia", classn$Genus),14])
+unique(classn[grepl("Solidago", classn$Genus),14])
+unique(classn[grepl("Taraxacum", classn$Genus),14])
+unique(classn[grepl("Trifolium", classn$Genus),14])
+unique(classn[grepl("Vaccinium", classn$Genus),14])
+unique(classn[grepl("Verbascum", classn$Genus),14])
+  #from speciesonly
+unique(classn[grepl("Achillea", classn$Genus),14])
+unique(classn[grepl("Bromus", classn$Genus),14])
+unique(classn[grepl("Calamagrostis", classn$Genus),14])
+unique(classn[grepl("Elymus", classn$Genus),14])
+unique(classn[grepl("Festuca", classn$Genus),14])
+unique(classn[grepl("Stipa", classn$Genus),14])
+

@@ -1,0 +1,22 @@
+Species,LifeForm,Count,Mean,Rank,CumAve,PlantCode,Genus,nspp in genus,nspp recorded
+Achillea millefolium,forb,31,1.006451613,27,80.67096774,ACHMIL,Achillea,1,1
+Agropyron cristatum,graminoid,21,0.529032258,42,90.81612903,AGRCRI,Agropyron,"3, incl SP",1
+Aristida purpurea,graminoid,21,0.280645161,51,94.39354839,NA,Aristida,1,1
+Balsamorhiza sagittata,forb,31,2.316129032,11,56.6483871,BALSAG,Balsamorhiza,1,1
+Berberis repens,shrub,21,0.396774194,48,93.49354839,BERREP,Berberis,"1, but doesn't matter since shrub",1
+Bromus tectorum,graminoid,31,3.587096774,6,42.31290323,BROTEC,Bromus,5,4
+Bromus inermis,graminoid,31,1.983870968,13,60.93870968,BROINE,Bromus,,4
+Calamagrostis rubescens,graminoid,31,1.609677419,17,68.09354839,CALRUB,Calamagrostis,2,1
+Dactylis glomerata,graminoid,21,0.461290323,45,92.23870968,DACGLO,Dactylis,1,1
+Elymus glaucus,graminoid,31,1.938709677,14,62.87741935,ELYGLA,Elymus,7,0
+Festuca altaica campestris,graminoid,31,3.516129032,7,45.82903226,NA,Festuca,4,2
+Festuca idahoensis,graminoid,31,1.574193548,19,71.25483871,FESIDA,Festuca,,2
+Koeleria macrantha,graminoid,31,0.748387097,31,84.06774194,KOEMAC,Koeleria,1,1
+Medicago sativa,forb,31,2.551612903,10,54.33225806,MEDSAT,Medicago,1,1
+Phleum pratense,graminoid,31,1.041935484,26,79.66451613,PHLPRA,Phleum,1,1
+Poa pratensis,graminoid,31,2.683870968,9,51.78064516,POAPRA,Poa,"8, incl SP",4
+Stipa comata,graminoid,31,3.267741935,8,49.09677419,STICOM,Stipa,"6, incl SP",3
+Symphoricarpos albus,shrub,31,0.674193548,34,86.16774194,SYMALB,Symphoricarpos,1,1
+Triticum aestivum,graminoid,21,0.580645161,38,88.59354839,TRIAES,Triticum,1,1
+Xerophyllum tenax,forb,11,0.280645161,52,94.67419355,XERTEN,Xerophyllum,1,1
+Zea mays,graminoid,21,0.603225806,37,88.01290323,ZEAMAY,Zea,1,1
