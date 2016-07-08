@@ -12,7 +12,7 @@ library(RODBC)
 ## WD
 
 wd_workcomp <- "C:\\Users\\kristin.barker\\Documents\\GitHub\\ForagePlants"
-wd_laptop <- "C:\\Users\\kjbark3r\\Documents\\GitHub\\FpragePlants"
+wd_laptop <- "C:\\Users\\kjbark3r\\Documents\\GitHub\\ForagePlants"
 
 	if (file.exists(wd_workcomp)) {
 	  setwd(wd_workcomp)
@@ -139,4 +139,12 @@ forage <- left_join(forage, spp, by = "Species")  #add spp code
 #will add these manually for sake of time
 write.csv(forage, file = "foragespecies.csv", row.names = FALSE)
 
+
+##########
+## FIGURING OUT HOW TO HANDLE GENUS-ONLY IDS
+
+genusonly <- filter(forage, grepl(" sp", Species)) #all non-species
+  # 28 forage plants (~57%) are only IDd to genus
+  # see how many of the ones IDd to species have many other species in that genus
+speciesonly <- filter(forage, !grepl(" sp", Species))
      
